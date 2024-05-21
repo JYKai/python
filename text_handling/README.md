@@ -103,3 +103,62 @@ too short, you need python.
 ---
 </div> 
 </details>
+
+
+
+<details>  
+<summary>정규표현식으로 개인정보를 보호하려면?</summary>  
+<div markdown="1"> 
+
+---
+**정규표현식(regular expression)**
+- 복잡한 문자열을 처리할 때 사용하는 기법
+
+**Use. 주민등록번호 뒷자리 처리**
+- 정규표현식을 사용하지 않았을 때
+ ```python
+def not_re(data):
+    result = []
+    for line in data.split('\n'):
+        word_result = []
+        for word in line.split(' '):
+            if len(word) == 14 and word[:6].isdigit() and word[7:].isdigit():
+                word = word[:6] + '-' + "*******"
+            word_result.append(word)
+        result.append(" ".join(word_result))
+
+    print("\n".join(result))
+
+data = """
+홍길동의 주민번호는 800905-1049118 입니다. 
+그리고 고길동의 주민번호는 700905-1059119 입니다.
+그렇다면 누가 형님일까요?
+"""
+
+not_re(data)
+```
+
+- 정규표현식을 사용했을 때
+
+```python
+import re
+
+def use_re(data):
+    pat = re.compile("(\d{6})[-]\d{7}")
+    print(pat.sub('\g<1>-*******', data))
+
+data = """
+홍길동의 주민번호는 800905-1049118 입니다. 
+그리고 고길동의 주민번호는 700905-1059119 입니다.
+그렇다면 누가 형님일까요?
+"""
+
+use_re(data)
+```
+- ```(\d{6})[-]\d{7}``` : 숫자6 + 붙임표(-) + 숫자7 (단, 숫자6은 괄호를 사용하여 그룹으로 지정했다.)
+- ```\g<1>``` : 정규표현식과 일치하는 문자열 중 첫 번째 그룹을 의미한다.
+- 정규표현식에서 그룹을 지정하려면 괄호로 묶으면 된다.
+---
+
+</div> 
+</details>
