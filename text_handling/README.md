@@ -36,3 +36,70 @@ print(shorten_text) # Life is too...
 ---
 </div> 
 </details>
+
+
+
+<details>  
+<summary>긴 문장을 줄 바꿈하려면?</summary>  
+<div markdown="1"> 
+
+---
+**textwarp.warp()**
+- 긴 문자열을 원하는 길이로 줄 바꿈(warpping)할 때 사용하는 함수
+
+```python
+long_text = "Life is too short, you need python. " * 10
+
+'''
+Life is too short, you need python. Life is too short, you need python. Life is too 
+short, you need python. Life is too short, you need python. Life is too short, you need
+python. Life is too short, you need python. Life is too short, you need python. Life is 
+too short, you need python. Life is too short, you need python. Life is too short, you 
+need python.
+''' 
+```
+```python
+import textwrap
+
+long_text = "Life is too short, you need python. " * 10
+line_text = textwrap.wrap(long_text, width=70)
+'''
+['Life is too short, you need python. Life is too short, you need', 'python. Life is too
+ short, you need python. Life is too short, you', 'need python. Life is too short, you 
+need python. Life is too short,', 'you need python. Life is too short, you need python. 
+Life is too', 'short, you need python. Life is too short, you need python. Life is', 'too 
+short, you need python.']
+'''
+```
+- textwrap.warp() 함수는 긴 문자열을 width 길이만큼 자르고 이를 리스트로 만들어 반환
+  - 단어 단위로 문자열을 자르므로 단어 중간이 끊어지지 않는다.
+
+```python
+print('\n'.join(line_text))
+'''
+Life is too short, you need python. Life is too short, you need
+python. Life is too short, you need python. Life is too short, you
+need python. Life is too short, you need python. Life is too short,
+you need python. Life is too short, you need python. Life is too
+short, you need python. Life is too short, you need python. Life is
+too short, you need python.
+'''
+```
+- 하나의 문자열로 표시하고자 할 때, join() 함수로 문자열 사이에 줄 바꿈 문자(\n)를 넣어 출력
+
+```python
+line_text = textwrap.fill(long_text, width=70)
+print(line_text)
+'''
+Life is too short, you need python. Life is too short, you need
+python. Life is too short, you need python. Life is too short, you
+need python. Life is too short, you need python. Life is too short,
+you need python. Life is too short, you need python. Life is too
+short, you need python. Life is too short, you need python. Life is
+too short, you need python.
+'''
+```
+- **textwrap.fill()** 함수를 사용하면 위 과정을 한 번에 진행할 수 있다. 
+---
+</div> 
+</details>
