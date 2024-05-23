@@ -7,3 +7,4 @@
 | No   | Goal |Functions|                                                       
 | :--- | -------| ------|
 | 1    | [Text handling](https://github.com/JYKai/python_skills/tree/main/text_handling) |textwrap.shorten, textwrap.warp, re|
+| 2    | [Binary data handling](https://github.com/JYKai/python_skills/tree/main/binary_handling) |struct|
