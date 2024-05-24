@@ -1,6 +1,5 @@
 # Code Status
 
-
 ## String
 
 | Done | No   | Level | Name                                                         |

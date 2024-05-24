@@ -1,7 +1,6 @@
-# Python Skills
+# Python Library Skills
 
 ### 목표 : Python 라이브러리 활용 능력 향상
-
 
 ### 라이브러리
 | No   | Goal |Functions|                                                       
