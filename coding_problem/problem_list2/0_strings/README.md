@@ -7,7 +7,6 @@
 
 ## Problems
 
-
 <details>
 <summary>001. 유효한 팰린드롬</summary>
 <div markdown='1'>
