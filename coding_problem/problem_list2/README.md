@@ -1,7 +1,6 @@
 # Code Status
 
 ## String
-
 | Done | No   | Level | Name                                                         |
 | ---- | :--- | ----- | ------------------------------------------------------------ |
 | V    | 1    | 1     | [유효한 팰린드롬](https://leetcode.com/problems/valid-palindrome/description/) |
@@ -28,10 +27,10 @@
 ### Linked List
 | Done | No   | Level | Name                                                         |
 | ---- | :--- | ----- | ------------------------------------------------------------ |
-|     | 13    | 1     | [팰린드롬 연결 리스트](https://leetcode.com/problems/palindrome-linked-list/description/) |
-|     | 14    | 1     | [두 정렬 리스트의 병합](https://leetcode.com/problems/merge-two-sorted-lists/description/) |
-|     | 15    | 1     | [역순 연결 리스트](https://leetcode.com/problems/reverse-linked-list/description/) |
-|     | 16    | 2     | [두 수의 덧셈](https://leetcode.com/problems/add-two-numbers/description/) |
+| V    | 13    | 1     | [팰린드롬 연결 리스트](https://leetcode.com/problems/palindrome-linked-list/description/) |
+| X    | 14    | 1     | [두 정렬 리스트의 병합](https://leetcode.com/problems/merge-two-sorted-lists/description/) |
+| X    | 15    | 1     | [역순 연결 리스트](https://leetcode.com/problems/reverse-linked-list/description/) |
+| X    | 16    | 2     | [두 수의 덧셈](https://leetcode.com/problems/add-two-numbers/description/) |
 |     | 17    | 2     | [페어의 노드 스왑](https://leetcode.com/problems/swap-nodes-in-pairs/description/) |
 |     | 18    | 2     | [홀짝 연결 리스트](https://leetcode.com/problems/odd-even-linked-list/description/) |
 |     | 19    | 1     | [역순 연결 리스트2](https://leetcode.com/problems/reverse-linked-list-ii/description/) |
