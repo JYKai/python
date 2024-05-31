@@ -510,3 +510,121 @@ def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optio
 ---
 </div>
 </details>
+
+
+<details>
+<summary>017. 페어의 노드 스왑</summary>
+<div markdown='1'>
+
+---
+1. 값만 교환
+```python
+def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    cur = head
+
+    while cur and cur.next:
+        # 값만 교환
+        cur.val, cur.next.val = cur.next.val, cur.val
+        cur = cur.next.next
+
+    return head
+```
+
+2. 반복 구조로 스왑
+```python
+def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    root = prev = ListNode(None)
+    prev.next = head
+    while head and head.next:
+        # b가 a(head)를 가리키도록 할당
+        b = head.next
+        head.next = b.next
+        b.next = head
+
+        # prev가 b를 가리키도록 할당
+        prev.next = b
+
+        # 다음번 비교를 위해 이동
+        head = head.next
+        prev = prev.next.next
+    
+    return root.next
+```
+
+3. 재귀 구조로 스왑
+```python
+def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    if head and head.next:
+        p = head.next
+        # 스왑된 값 리턴 받음
+        head.next = self.swapPairs(p.next)
+        p.next = head
+        return p
+    return head
+```
+
+---
+</div>
+</details>
+
+
+<details>
+<summary>018. 홀짝 연결 리스트</summary>
+<div markdown='1'>
+
+---
+1. 반복 구조로 홀짝 노드 처리
+```python
+def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    # 예외 처리
+    if head is None:
+        return None
+    
+    odd = head
+    even = head.next
+    even_head = head.next
+
+    # 반복하면서 홀짝 노드 처리
+    while even and even.next:
+        odd.next, even.next = odd.next.next, even.next.next
+        odd, even = odd.next, even.next
+    
+    # 홀수 노드의 마지막을 짝수 헤드로 연결
+    odd.next = even_head
+    return head
+```
+---
+</div>
+</details>
+
+
+<details>
+<summary>019. 역순 연결 리스트2</summary>
+<div markdown='1'>
+
+---
+1. 반복 구조로 노드 뒤집기
+```python
+def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+    # 예외 처리
+    if not head or left == right:
+        return head
+    
+    root = start = ListNode(None)
+    root.next = head
+
+    # start, end 지정
+    for _ in range(left - 1):
+        start = start.next
+    end = start.next
+
+    # 반복하면서 노드 차례대로 뒤집기
+    for _ in range(right - left):
+        tmp, start.next, end.next = start.next, end.next, end.next.next
+        start.next.next = tmp
+    return root.next
+```
+
+---
+</div>
+</details>

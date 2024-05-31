@@ -31,6 +31,17 @@
 | X    | 14    | 1     | [두 정렬 리스트의 병합](https://leetcode.com/problems/merge-two-sorted-lists/description/) |
 | X    | 15    | 1     | [역순 연결 리스트](https://leetcode.com/problems/reverse-linked-list/description/) |
 | X    | 16    | 2     | [두 수의 덧셈](https://leetcode.com/problems/add-two-numbers/description/) |
-|     | 17    | 2     | [페어의 노드 스왑](https://leetcode.com/problems/swap-nodes-in-pairs/description/) |
-|     | 18    | 2     | [홀짝 연결 리스트](https://leetcode.com/problems/odd-even-linked-list/description/) |
-|     | 19    | 1     | [역순 연결 리스트2](https://leetcode.com/problems/reverse-linked-list-ii/description/) |
+| X    | 17    | 2     | [페어의 노드 스왑](https://leetcode.com/problems/swap-nodes-in-pairs/description/) |
+| X    | 18    | 2     | [홀짝 연결 리스트](https://leetcode.com/problems/odd-even-linked-list/description/) |
+| X    | 19    | 1     | [역순 연결 리스트2](https://leetcode.com/problems/reverse-linked-list-ii/description/) |
+
+
+### Stack & Queue
+| Done | No   | Level | Name                                                         |
+| ---- | :--- | ----- | ------------------------------------------------------------ |
+|     | 20    | 1     | [유효한 괄호](https://leetcode.com/problems/valid-parentheses/description/) |
+|     | 21    | 3     | [중복 문자 제거](https://leetcode.com/problems/remove-duplicate-letters/description/) |
+|     | 22    | 2     | [일일 온도](https://leetcode.com/problems/daily-temperatures/description/) |
+|     | 23    | 1     | [큐를 이용한 스택 구현](https://leetcode.com/problems/implement-stack-using-queues/description/) |
+|     | 24    | 1     | [스택을 이용한 큐 구현](https://leetcode.com/problems/implement-queue-using-stacks/description/) |
+|     | 25    | 2     | [원형 큐 디자인](https://leetcode.com/problems/design-circular-queue/description/) |
