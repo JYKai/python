@@ -123,3 +123,136 @@ print(calendar.isleap(2024)) # True
 
 </div>
 </details>
+
+<details>
+<summary>앞뒤에서 자료를 넣고 빼려면?</summary>
+<div markdown='1'>
+
+---
+**collections.deque**  
+deque는 앞과 뒤에서 데이터를 처리할 수 있는 양방향 자료형이다.
+
+리스트를 n만큼 회전하는 문제를 해결하기 위해 주로 사용된다.
+```python
+from collections import deque
+
+a = [1, 2, 3, 4, 5]
+q = deque(a)
+
+q.rotate(2) # 시계방향 회전은 양수, 그 반대는 음수
+
+result = list(q)
+print(result) # [4, 5, 1, 2, 3]
+```
+---
+- ```rotate()``` : 시계방향 회전은 양수, 그 반대는 음수
+- ```appendleft()``` : 데크 왼쪽에 x 추가
+- ```popleft()``` : 데크 왼쪽에서 요소를 제거
+- 장점
+    - deque는 list보다 속도가 빠르다. pop(0)과 같은 메서드를 수행할 때 리스트는 O(N) 연산을 수행하지만, deque는 O(1) 연산을 수행하기 때문이다.
+    - 스레드 환경에서 안전하다.
+</div>
+</details>
+
+
+<details>
+<summary>자료에 이름을 붙이려면?</summary>
+<div markdown='1'>
+
+---
+**collections.namedtuple**  
+네임드 튜플은 인덱스뿐만 아니라 키(key)로도 데이터에 접근할 수 있는 자료형이다.
+
+```python
+from collections import namedtuple
+
+data = [
+    ('홍길동', 23, '01011111111'),
+    ('김철수', 31, '01022222222'),
+    ('이영희', 29, '01033333333')
+]
+
+# namedtuple 자료형 생성
+Employee = namedtuple('Employee', 'name, age, cellphone')
+
+# data = [Employee(emp[0], emp[1], emp[2]) for emp in data]
+data = [Employee._make(emp) for emp in data]
+
+emp = data[0]
+print(emp.name, emp.age, emp.cellphone) # 홍길동 23 01011111111
+print(emp._asdict()) # {'name': '홍길동', 'age': 23, 'cellphone': '01011111111'}
+
+# emp.name = '박길동' -> 값 변경시 오류 발생
+new_emp = emp._replace(name='박길동')
+print(new_emp) # Employee(name='박길동', age=23, cellphone='01011111111')
+```
+- ```namedtuple()```
+    - 첫 번째 입력 : 자료형 이름(type name)
+    - 보통 ```namedtuple()```로 생성하는 객체 이름과 같도록 한다.
+    - 나머지 입력 : 쉼표로 구성된 문자열은 해당 namedtuple의 속성이 된다.
+- ```_make()```
+    - 리스트 컴프리헨션을 통해 할당을 할 수 있지만, 튜플의 요소가 많다면 ```_make()``` 함수를 사용하는 것이 유리하다.
+- ```_asdict()```
+    - 딕셔너리로 변환할 수 있다.
+- 네임드 튜플의 값은 튜플의 immutable 특징을 그대로 가지고 있기 때문에 속성값을 변경할 수 없다.
+- ```_replace()```를 통해 값을 바꿀 수 있지만, 해당 함수는 객체를 직접 변경하는 것이 아닌 값을 변경한 새로운 객체를 만들어 반환한다는 점에 주의하자.
+---
+</div>
+</details>
+
+<details>
+<summary>사용한 단어 개수를 구하려면?</summary>
+<div markdown='1'>
+
+---
+**collections.Counter**  
+리스트나 문자열과 같은 자료형의 요소 중 값이 같은 요소가 몇 개인지를 확인할 때 사용하는 클래스이다.
+
+```python
+from collections import Counter
+import re
+
+data = """
+산에는 꽃 피네.
+꽃이 피네.
+갈 봄 여름없이
+꽃이 피네.
+
+산에
+산에
+피는 꽃은
+저만치 혼자서 피어있네.
+
+산에서 우는 새여
+꽃이 좋아
+산에서
+사노라네.
+
+산에는 꽃지네
+꽃이 지네.
+갈 봄 여름 없이
+꽃이 지네.
+"""
+
+words = re.findall(r'\w+', data)
+counter = Counter(words)
+
+print(counter)
+"""
+Counter({'꽃이': 5, '피네': 3, '산에는': 2, '갈': 2, 
+         '봄': 2, '산에': 2, '산에서': 2, '지네': 2, 
+         '꽃': 1, '여름없이': 1, '피는': 1, '꽃은': 1, 
+         저만치': 1, '혼자서': 1, '피어있네': 1, '우는': 1, 
+         '새여': 1, '좋아': 1, '사노라네': 1, '꽃지네': 1, 
+         '여름': 1, '없이': 1})
+"""
+
+print(counter.most_common(1)) # [('꽃이', 5)]
+print(counter.most_common(2)) # [('꽃이', 5), ('피네', 3)]
+```
+- ```\w+``` : 단어를 의미
+- ```most_common()```
+    - 빈도수가 많은 것부터 인수로 입력한 개수만큼 튜플로 반환한다.
+---
+</div>
+</details>
