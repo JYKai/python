@@ -162,3 +162,21 @@ use_re(data)
 
 </div> 
 </details>
+
+<details>
+<summary>Tips</summary>
+<div markdown='1'>
+
+---
+1. 구두점을 간단하게 삭제하기
+string 모듈의 punctuation에는 모든 구두점이 들어있다. 다음과 같이 strip 메서드에 string.punctuation을 넣으면 문자열 양쪽의 모든 구두점을 간단하게 삭제할 수 있다.
+```python
+import string
+
+word = ', python.'
+word.strip(string.punctuation + ' ')
+```
+- string.punctuation : '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+---
+</div>
+</details>
