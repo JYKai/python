@@ -39,9 +39,9 @@
 ### Stack & Queue
 | Done | No   | Level | Name                                                         |
 | ---- | :--- | ----- | ------------------------------------------------------------ |
-|     | 20    | 1     | [유효한 괄호](https://leetcode.com/problems/valid-parentheses/description/) |
-|     | 21    | 3     | [중복 문자 제거](https://leetcode.com/problems/remove-duplicate-letters/description/) |
-|     | 22    | 2     | [일일 온도](https://leetcode.com/problems/daily-temperatures/description/) |
+| V    | 20    | 1     | [유효한 괄호](https://leetcode.com/problems/valid-parentheses/description/) |
+| X    | 21    | 3     | [중복 문자 제거](https://leetcode.com/problems/remove-duplicate-letters/description/) |
+| V    | 22    | 2     | [일일 온도](https://leetcode.com/problems/daily-temperatures/description/) |
 |     | 23    | 1     | [큐를 이용한 스택 구현](https://leetcode.com/problems/implement-stack-using-queues/description/) |
 |     | 24    | 1     | [스택을 이용한 큐 구현](https://leetcode.com/problems/implement-queue-using-stacks/description/) |
 |     | 25    | 2     | [원형 큐 디자인](https://leetcode.com/problems/design-circular-queue/description/) |

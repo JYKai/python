@@ -168,6 +168,7 @@ use_re(data)
 <div markdown='1'>
 
 ---
+[tips](https://dojang.io/mod/page/view.php?id=2305)
 1. 구두점을 간단하게 삭제하기
 string 모듈의 punctuation에는 모든 구두점이 들어있다. 다음과 같이 strip 메서드에 string.punctuation을 넣으면 문자열 양쪽의 모든 구두점을 간단하게 삭제할 수 있다.
 ```python
@@ -177,6 +178,15 @@ word = ', python.'
 word.strip(string.punctuation + ' ')
 ```
 - string.punctuation : '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+
+2. 문자열 위치 찾기
+- find('찾을문자열')은 문자열에서 특정 문자열을 찾아서 인덱스를 반환하고, 문자열이 없으면 -1을 반환
+- rfind('찾을문자열')은 오른쪽에서부터 특정 문자열을 찾아서 인덱스를 반환하고, 문자열이 없으면 -1을 반환
+- index('찾을문자열')은 왼쪽에서부터 특정 문자열을 찾아서 인덱스를 반환
+- rindex('찾을문자열')은 오른쪽에서부터 특정 문자열을 찾아서 인덱스를 반환
+
+3. translate(테이블)
+- 문자열 안의 문자를 다른 문자로 바꿈, ```str.maketrans('바꿀문자', '새문자')```로 변환 테이블을 만들어야 함
 ---
 </div>
 </details>
