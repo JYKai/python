@@ -1,9 +1,6 @@
 # Code Status
 
-
-
 ## Array
-
 | Done | No   | Level | Name                                                         |
 | ---- | :--- | ----- | ------------------------------------------------------------ |
 | V    | 1    | 1     | [두 개 뽑아서 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/68644) |
@@ -12,10 +9,7 @@
 | V    | 4    | 2     | [실패율](https://school.programmers.co.kr/learn/courses/30/lessons/42889) |
 | V    | 5    | 2     | [방문 길이](https://school.programmers.co.kr/learn/courses/30/lessons/49994) |
 
-
-
 ## Stack & Queue
-
 | Done | No   | Level | Name                                                         |
 | ---- | ---- | ----- | ------------------------------------------------------------ |
 | V    | 6    | 1     | [괄호 회전하기](https://school.programmers.co.kr/learn/courses/30/lessons/76502) |
@@ -40,9 +34,7 @@
 | V    | 18   | 3     | [메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411) |
 
 
-
 ## Tree
-
 |Done| No   | Level | Name                                                         |
 | ---- | ---- | ----- | ------------------------------------------------------------ |
 |V| 19   | 1     | [예상 대진표](https://school.programmers.co.kr/learn/courses/30/lessons/12985) |
@@ -63,7 +55,6 @@
 
 
 ## Graph
-
 |Done| No   | Level | Name                                                         |
 |----| ---- | ----- | ------------------------------------------------------------ |
 |V| 28   | 2     | [게임 맵 최단 거리](https://school.programmers.co.kr/learn/courses/30/lessons/1844) |
@@ -74,7 +65,6 @@
 
 
 ## Back Tracking
-
 |Done| No   | Level | Name                                                         |
 |----| ---- | ----- | ------------------------------------------------------------ |
 |X| 33   | 1     | [피로도](https://school.programmers.co.kr/learn/courses/30/lessons/87946) |
@@ -85,7 +75,6 @@
 
 
 ## Sort
-
 |Done| No   | Level | Name                                                         |
 |----| ---- | ----- | ------------------------------------------------------------ |
 |V| 38   | 1     | [문자열 내 마음대로 정렬하기](https://school.programmers.co.kr/learn/courses/30/lessons/12915) |
@@ -97,7 +86,6 @@
 
 
 ## Simulation
-
 |Done| No   | Level | Name                                                         |
 |----| ---- | ----- | ------------------------------------------------------------ |
 |V| 44   | 2     | [이진 변환 반복하기](https://school.programmers.co.kr/learn/courses/30/lessons/70129) |
@@ -106,8 +94,8 @@
 |V| 47   | 3     | [점프와 순간 이동](https://school.programmers.co.kr/learn/courses/30/lessons/12980) |
 |V| 48   | 2     | [캐릭터의 좌표](https://school.programmers.co.kr/learn/courses/30/lessons/120861) |
 
-## DP
 
+## DP
 |Done| No   | Level | Name                                                         |
 |----| ---- | ----- | ------------------------------------------------------------ |
 |V| 49   | 1     | [피보나치 수](https://school.programmers.co.kr/learn/courses/30/lessons/12945) |
@@ -120,7 +108,6 @@
 
 
 ## Greedy
-
 |Done| No   | Level | Name                                                         |
 |----| ---- | ----- | ------------------------------------------------------------ |
 |V| 56   | 1     | [예산](https://school.programmers.co.kr/learn/courses/30/lessons/12982) |
