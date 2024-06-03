@@ -1,17 +1,17 @@
-## 스택 & 큐(Stack & Queue)
-### 스택
+# 스택 & 큐(Stack & Queue)
+## 스택
 스택은 다음과 같은 두 가지 주요 연산을 지원하는 요소의 컬렉션으로 사용되는 추상 자료형(Abstract Data Type, ADT)이다.
 - push(): 요소를 컬렉션에 추가한다.
 - pop(): 아직 제거되지 않은 가장 최근에 삽입된 요소를 제거한다.
 
 </br>
 
-### 큐
+## 큐
 큐는 시퀀스의 한쪽 끝에는 엔티티를 추가하고, 다른 반대쪽 끝에는 제거할 수 있는 엔티티 컬렉션이다.
 
 </br>
 
-### Problems
+## Problems
 <details>
 <summary>020. 유효한 괄호</summary>
 <div markdown='1'>
@@ -102,6 +102,122 @@ def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         stack.append(i)
 
     return answer
+```
+---
+</div>
+</details>
+
+
+<details>
+<summary>023. 큐를 이용한 스택 구현</summary>
+<div markdown='1'>
+
+---
+1. push()할 때 큐를 이용해 재정렬
+```python
+from collections import deque
+
+class MyStack:
+    def __init__(self):
+        self.q = deque()
+    
+    def push(self, x):
+        self.q.append(x)
+        # 요소 삽입 후 매 앞에 두는 상태로 재정렬
+        for _ in range(len(self.q) - 1):
+            self.q.append(self.q.popleft())
+    
+    def pop(self):
+        return self.q.popleft()
+    
+    def top(self):
+        return self.q[0]
+    
+    def empty(self):
+        return len(self.q) == 0
+```
+---
+</div>
+</details>
+
+
+<details>
+<summary>024. 스택을 이용한 큐 구현</summary>
+<div markdown='1'>
+
+---
+1. 스택 2개 사용
+```python
+class MyQueue:
+    def __init__(self):
+        self.input = []
+        self.output = []
+
+    def push(self, x):
+        self.input.append(x)
+    
+    def pop(self):
+        self.peek()
+        return self.output.pop()
+    
+    def peek(self):
+        # output이 없으면 모두 재입력
+        if not self.output:
+            while self.input:
+                self.output.append(self.input.pop())
+        return self.output[-1]
+    
+    def empty(self):
+        return self.input == [] and self.output == []
+```
+---
+</div>
+</details>
+
+
+<details>
+<summary>025. 원형 큐 디자인</summary>
+<div markdown='1'>
+
+---
+1. 배열을 이용한 풀이
+```python
+class MyCircularQueue:
+    def __init__(self, k: int):
+        self.q = [None] * k
+        self.maxlen = k
+        self.p1 = 0
+        self.p2 = 0
+    
+    # enQueue(): rear 포인터 이동
+    def enQueue(self, value: int) -> bool:
+        if self.q[self.p2] is None:
+            self.q[self.p2] = value
+            self.p2 = (self.p2 + 1) % self.maxlen
+            return True
+        else:
+            return False
+    
+    # deQueue(): front 포인터 이동
+    def deQueue(self) -> bool:
+        if self.q[self.p1] is None:
+            return False
+        else:
+            self.q[self.p1] = None
+            self.p1 = (self.p1 + 1) % self.maxlen
+            return True
+    
+    def Front(self) -> int:
+        return -1 if self.q[self.p1] is None else self.q[self.p1]
+    
+    def Rear(self) -> int:
+        return -1 if self.q[self.p2 - 1] is None else self.q[self.p2 - 1]
+    
+    def isEmpty(self) -> bool:
+        return self.p1 == self.p2 and self.q[self.p1] is None
+    
+    def isFull(self) -> bool:
+        return self.p1 == self.p2 and self.q[self.p1] is not None
 ```
 ---
 </div>

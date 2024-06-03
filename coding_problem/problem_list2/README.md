@@ -42,6 +42,22 @@
 | V    | 20    | 1     | [유효한 괄호](https://leetcode.com/problems/valid-parentheses/description/) |
 | X    | 21    | 3     | [중복 문자 제거](https://leetcode.com/problems/remove-duplicate-letters/description/) |
 | V    | 22    | 2     | [일일 온도](https://leetcode.com/problems/daily-temperatures/description/) |
-|     | 23    | 1     | [큐를 이용한 스택 구현](https://leetcode.com/problems/implement-stack-using-queues/description/) |
-|     | 24    | 1     | [스택을 이용한 큐 구현](https://leetcode.com/problems/implement-queue-using-stacks/description/) |
-|     | 25    | 2     | [원형 큐 디자인](https://leetcode.com/problems/design-circular-queue/description/) |
+| V    | 23    | 1     | [큐를 이용한 스택 구현](https://leetcode.com/problems/implement-stack-using-queues/description/) |
+| V    | 24    | 1     | [스택을 이용한 큐 구현](https://leetcode.com/problems/implement-queue-using-stacks/description/) |
+| V    | 25    | 2     | [원형 큐 디자인](https://leetcode.com/problems/design-circular-queue/description/) |
+
+
+### Dequeue & Priority queue
+| Done | No   | Level | Name                                                         |
+| ---- | :--- | ----- | ------------------------------------------------------------ |
+|     | 26    | 2     | [원형 데크 디자인](https://leetcode.com/problems/design-circular-deque/description/) |
+|     | 27    | 1     | [k개 정렬 리스트 병합](https://leetcode.com/problems/merge-k-sorted-lists/description/) |
+
+
+### Hash table
+| Done | No   | Level | Name                                                         |
+| ---- | :--- | ----- | ------------------------------------------------------------ |
+|     | 28    | 1     | [해시맵 디자인](https://leetcode.com/problems/design-hashmap/description/) |
+|     | 29    | 1     | [보석과 돌](https://leetcode.com/problems/jewels-and-stones/description/) |
+|     | 30    | 2     | [중복 문자 없는 가장 긴 부분 문자열](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/) |
+|     | 31    | 2     | [상위 K 빈도 요소](https://leetcode.com/problems/top-k-frequent-elements/description/) |
