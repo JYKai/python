@@ -256,3 +256,111 @@ print(counter.most_common(2)) # [('꽃이', 5), ('피네', 3)]
 ---
 </div>
 </details>
+
+
+<details>
+<summary>딕셔너리를 한 번에 초기화하려면?</summary>
+<div markdown='1'>
+
+---
+**collections.defaultdict**  
+값(value)에 초깃값을 지정하여 딕셔너리를 생성하는 모듈
+
+```python
+from collections import defaultdict
+
+text = 'Life is too short, You need python.'
+
+text_dict = defaultdict(int)
+for key in text:
+    text_dict[key] += 1
+
+print(text_dict) # defaultdict(<class 'int'>, {'L': 1, 'i': 2, 'f': 1, 'e': 3, ' ': 6, 
+                 # 's': 2, 't': 3, 'o': 5, 'h': 2, 'r': 1, ',': 1, 'Y': 1, 'u': 1, 'n': 2, 'd': 1, 'p': 1, 'y': 1, '.': 1})
+```
+- 인수로 원하는 타입을 지정해주어 초기화 과정을 생략할 수 있다.
+
+---
+</div>
+</details>
+
+
+<details>
+<summary>수상자 3명을 선정하려면?</summary>
+<div markdown='1'>
+
+---
+**heapq**  
+순위가 가장 높은 자료(data)를 가장 먼저 꺼내는 우선순위 큐를 구현한 모듈
+
+```python
+import heapq
+
+data = [
+    (12.23, "강보람"),
+    (12.31, "김지원"),
+    (11.98, "박시우"),
+    (11.99, "장준혁"),
+    (11.67, "차정웅"),
+    (12.02, "박중수"),
+    (11.57, "차동현"),
+    (12.04, "고미숙"),
+    (11.92, "한시우"),
+    (12.22, "이민석"),
+]
+
+## 방법 1
+# h = [] # 힙 생성
+# for score in data:
+#     heapq.heappush(h, score) # 힙에 데이터 저장
+
+## 방법 2
+heapq.heapify(data)
+
+for i in range(3):
+    print(heapq.heappop(h)) # (11.57, '차동현'), (11.67, '차정웅'), (11.92, '한시우')
+```
+- ```heappush()```로 튜플을 추가할 때는 데이터의 우선순위를 나타내는 항목이 첫 번째여야 한다.
+- ```heapify()``` 함수로 data 리스트를 힙으로 만들 수 있다. 다만, data 리스트가 힙 구조에 맞게 변경된다.
+
+```python
+print(heapq.nsmallest(3, data))
+```
+- ```nsmallest(n, iterable)```
+    - 반복 가능한 객체 데이터 집합에서 n개의 가장 작은 요소로 구성된 리스트를 반환한다.
+
+---
+</div>
+</details>
+
+
+<details>
+<summary>데이터를 보기 좋게 출력하려면?</summary>
+<div markdown='1'>
+
+---
+**pprint**  
+데이터를 보기 좋게 출력(pretty print)할 때 사용하는 모듈
+
+```python
+from pprint import pprint
+
+data = {'userId': 1, 'id': 1, 'title': 'sunt aur aksd sdlkajlj fdlksjf sldksdfkl sdlfkjsl',
+        'body': 'aksdadnaskdnas asdjals asdkjas lk alioa ioas diojaoakdnla aslkdnassadaks'}
+
+pprint(data)
+
+'''
+{'body': 'aksdadnaskdnas asdjals asdkjas lk alioa ioas diojaoakdnla '
+         'aslkdnassadaks',
+ 'id': 1,
+ 'title': 'sunt aur aksd sdlkajlj fdlksjf sldksdfkl sdlfkjsl',
+ 'userId': 1}
+'''
+```
+- 복잡한 데이터를 보기 좋게 출력할 수 있다.
+- 구조가 복잡한 JSON 데이터를 디버깅 용도로 출력할 때 pprint를 자주 사용한다.
+
+---
+</div>
+</details>
