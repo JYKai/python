@@ -1,5 +1,8 @@
 # Language Python
 
+## [python basics]()
+- Learning basic Python grammar
+
 ## [python coding problem](https://github.com/JYKai/python/tree/main/coding_problem)
 - Improving various algorithms and problem-solving skills
 
