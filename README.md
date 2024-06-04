@@ -1,6 +1,6 @@
 # Language Python
 
-## [python basics]()
+## [python basics](https://github.com/JYKai/python/tree/main/basics)
 - Learning basic Python grammar
 
 ## [python coding problem](https://github.com/JYKai/python/tree/main/coding_problem)
