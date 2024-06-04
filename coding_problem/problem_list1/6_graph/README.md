@@ -275,8 +275,37 @@ def solution(graph, source):
 <div markdown='1'>
 
 ---
+1. 내 풀이 - BFS
+```python
+from collections import deque
 
-
+def solution(maps):
+    answer = -1
+    n = len(maps)
+    m = len(maps[0])
+    
+    dx = [0, 1, 0, -1]
+    dy = [1, 0, -1, 0]
+    
+    q = deque()
+    q.append([0, 0, 1])
+    
+    visited = [[0] * m for _ in range(n)]
+    visited[0][0] = 1
+    while q:
+        cx, cy, cc = q.popleft()
+        
+        if [cy, cx] == [n - 1, m - 1]:
+            return cc
+        
+        for i in range(4):
+            nx, ny = cx + dx[i], cy + dy[i]
+            if 0 <= ny < n and 0 <= nx < m and maps[ny][nx] == 1 and visited[ny][nx] != 1:
+                visited[ny][nx] = 1
+                q.append([nx, ny, cc + 1])
+                
+    return answer
+```
 ---
 </div>
 </details>
@@ -286,9 +315,24 @@ def solution(graph, source):
 <summary>29. 네트워크</summary>
 <div markdown='1'>
 
----
+--
+1. 풀이 - DFS
+```python
+def DFS(computers, visited, node):
+    visited[node] = True
+    for idx, connected in enumerate(computers[node]):
+        if connected == 1 and not visited[idx]:
+            DFS(computers, visited, idx)
 
-
+def solution(n, computers):
+    answer = 0
+    visited = [False] * n
+    for i in range(n):
+        if not visited[i]:
+            DFS(computers, visited, i)
+            answer += 1
+    return answer
+```
 ---
 </div>
 </details>
@@ -299,7 +343,41 @@ def solution(graph, source):
 <div markdown='1'>
 
 ---
+1. 내 풀이 - 다익스트라 알고리즘
+```python
+import heapq
+from collections import defaultdict
 
+def solution(N, road, K):
+    answer = 0
+    graph = defaultdict(list)
+    for s, e, cost in road:
+        graph[s].append((e, cost))
+        graph[e].append((s, cost))
+    
+    distances = [float('inf')] * (N + 1)
+    distances[1] = 0
+    
+    q = []
+    heapq.heappush(q, [distances[1], 1])
+    
+    while q:
+        current_cost, current_node = heapq.heappop(q)
+        if distances[current_node] < current_cost:
+            continue
+        
+        for aj_node, weight in graph[current_node]:
+            distance = current_cost + weight
+            if distance < distances[aj_node]:
+                distances[aj_node] = distance
+                heapq.heappush(q, [distance, aj_node])
+    
+    for d in distances[1:]:
+        if d <= K:
+            answer += 1
+
+    return answer
+```
 
 ---
 </div>
