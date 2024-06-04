@@ -50,8 +50,8 @@
 ### Dequeue & Priority queue
 | Done | No   | Level | Name                                                         |
 | ---- | :--- | ----- | ------------------------------------------------------------ |
-|     | 26    | 2     | [원형 데크 디자인](https://leetcode.com/problems/design-circular-deque/description/) |
-|     | 27    | 1     | [k개 정렬 리스트 병합](https://leetcode.com/problems/merge-k-sorted-lists/description/) |
+| X    | 26    | 2     | [원형 데크 디자인](https://leetcode.com/problems/design-circular-deque/description/) |
+| X    | 27    | 1     | [k개 정렬 리스트 병합](https://leetcode.com/problems/merge-k-sorted-lists/description/) |
 
 
 ### Hash table
