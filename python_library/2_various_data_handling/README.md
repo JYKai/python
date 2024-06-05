@@ -1,12 +1,4 @@
 # Various data handling
-- datetime
-    - 두 날짜의 차이나 특정 날짜의 요일을 쉽게 구할 수 있는 모듈
-- calendar
-    - 윤년 확인 가능
-- collections
-    - 튜플, 딕셔너리를 더 효과적으로 사용할 수 있는 모듈
-- pprint
-    - 데이터를 보기 좋게 출력하는 모듈
 
 <details>
 <summary>날짜를 계산하고 요일을 알려면?</summary>
@@ -360,6 +352,145 @@ pprint(data)
 ```
 - 복잡한 데이터를 보기 좋게 출력할 수 있다.
 - 구조가 복잡한 JSON 데이터를 디버깅 용도로 출력할 때 pprint를 자주 사용한다.
+---
+</div>
+</details>
+
+
+<details>
+<summary>점수에 따른 학점을 구하려면?</summary>
+<div markdown='1'>
+
+---
+**bisect**  
+이진 탐색 알고리즘을 구현한 모듈로, ```bisect.bisect()``` 함수는 정렬된 리스트에 값을 삽입할 때 정렬을 유지할 수 있는 인덱스르 반환한다.
+
+```python
+import bisect
+
+result = []
+
+for score in [33, 99, 77, 70, 89, 90, 100]:
+    pos = bisect.bisect([60, 70, 80, 90], score) # 0, 4, 2, 2, 3, 4, 4
+    grade = 'FDCBA'[pos]
+    result.append(grade)
+
+print(result) # ['F', 'A', 'C', 'C', 'B', 'A', 'A']
+```
+- 70점, 90점같이 학점을 구분하는 점수와 같다면 ```bisect()``` 함수는 왼쪽이 아닌 오른쪽으로 삽입되는 인덱스를 반환한다.
+
+기준이 '이상'에서 '초과'로 변경된다면?
+```python
+import bisect
+
+result = []
+
+for score in [33, 99, 77, 70, 89, 90, 100]:
+    pos = bisect.bisect_left([60, 70, 80, 90], score) # 0, 4, 2, 1, 3, 3, 4
+    grade = 'FDCBA'[pos]
+    result.append(grade)
+
+print(result) # ['F', 'A', 'C', 'D', 'B', 'B', 'A']
+```
+- ```bisect_left()``` 함수를 사용하면 학점을 구분하는 점수가 리스트의 요소와 같을 때, 삽입 위치가 오른쪽이 아닌 왼쪽이 된다.
+- ```bisect()``` 함수는 ```bisect_right()``` 함수와 같다.
+
+**bisect.insort()**  
+정렬할 수 있는 위치에 해당 항목을 삽입하는 함수
+```python
+import bisect
+
+a = [60, 70, 80, 90]
+bisect.insort(a, 85) # [60, 70, 80, 85, 90]
+```
+---
+</div>
+</details>
+
+
+<details>
+<summary>숫자에 이름을 붙여서 사용하려면?</summary>
+<div markdown='1'>
+
+---
+**enum**  
+서로 관련이 있는 여러 개의 상수 집합을 정의할 때 사용하는 모듈
+```python
+from datetime import date
+from enum import IntEnum
+
+class Week(IntEnum):
+    MONDAY = 1
+    TUESDAY = 2
+    WEDNESDAY = 3
+    THURSDAY = 4
+    FRIDAY = 5
+    SATURDAY = 6
+    SUNDAY = 7
+
+def get_menu(input_data):
+
+    menu = {
+        Week.MONDAY: '김치찌개',
+        Week.TUESDAY: '비빔밥',
+        Week.WEDNESDAY: '된장찌개',
+        Week.THURSDAY: '불고기',
+        Week.FRIDAY: '갈비탕',
+        Week.SATURDAY: '라면',
+        Week.SUNDAY: '청국장'
+    }
+
+    return menu[input_data.isoweekday()]
+
+print(get_menu(date(2024, 6, 4))) # 비빔밥
+print(get_menu(date(2024, 6, 5))) # 된장찌개
+```
+- Week 클래스는 enum.IntEnum을 상속하여 맏는 Enum 자료형이다.
+- 숫자를 바로 사용하지 않고 Enum 자료형을 만들어 상수로 사용하면 유지보수에 유리하며 가독성도 좋아진다.
+
+```python
+print(Week.MONDAY.name) # MONDAY
+print(Week.MONDAY.value) # 1
+```
+- name과 value 속성으로 접근할 수 있다.
+---
+</div>
+</details>
+
+
+<details>
+<summary>수강할 과목의 순서를 구하려면?</summary>
+<div markdown='1'>
+
+---
+**graphlib.TopologicalSorter**  
+위상 정렬에 사용하는 클래스이며, 파이썬 3.9 버전 이상부터 사용할 수 있다.
+
+>위상 정렬이란?  
+> - 유향 그래프의 꼭짓점을 변의 방향으로 거스르지 않도록 나열하는 것을 의미한다.  
+> - 선후 관계가 정의된 그래프 구조에서 선후 관계에 따라 정렬하고자 위상 정렬을 이용한다.  
+> - 그래프가 비순환 유향 그래프일 때 성립한다.
+
+```python
+from graphlib import TopologicalSorter
+
+ts = TopologicalSorter()
+
+# 규칙 1
+ts.add('영어 중급', '영어 초급') # 영어 중급의 선수 과목은 영어 초급
+ts.add('영어 고급', '영어 중급') # 영어 고급의 선수 과목은 영어 초급
+
+# 규칙 2
+ts.add('영어 문법', '영어 중급') # 영어 문법의 선수 과목은 영어 중급
+ts.add('영어 고급', '영어 문법') # 영어 고급의 선수 과목은 영어 문법
+
+# 규칙 3
+ts.add('영어 회화', '영어 문법') # 영어 회화의 선수 과목은 영어 문법
+
+print(list(ts.static_order())) # 위상 정렬한 결과를 출력
+```
+- ```add(노드, *선행_노드)``` 함수는 특정 노드에 선행 노드를 추가할 때 사용하는 함수
+    - 선행 노드는 1개 이상도 지정할 수 있다.
 
 ---
 </div>
