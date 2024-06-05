@@ -71,7 +71,7 @@
 |X| 34   | 1     | [N-퀸](https://school.programmers.co.kr/learn/courses/30/lessons/12952) |
 |X| 35   | 2     | [양궁 대회](https://school.programmers.co.kr/learn/courses/30/lessons/92342) |
 |X| 36   | 5     | [외벽 점검](https://school.programmers.co.kr/learn/courses/30/lessons/60062) |
-|| 37   | 5     | [사라지는 발판](https://school.programmers.co.kr/learn/courses/30/lessons/92345) |
+|X| 37   | 5     | [사라지는 발판](https://school.programmers.co.kr/learn/courses/30/lessons/92345) |
 
 
 ## Sort
