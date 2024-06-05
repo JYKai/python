@@ -389,7 +389,38 @@ def solution(N, road, K):
 <div markdown='1'>
 
 ---
+1. heapq를 이용한 구현
+```python
+from heapq import heappush, heappop
 
+def solution(board):
+    answer = 0
+    
+    n = len(board)
+    
+    q = []
+    heappush(q, (0, 0, 0, -1))
+    
+    visited = [[[float('inf') for _ in range(4)] for _ in range(n)] for _ in range(n)]
+    visited[0][0][0] = visited[0][0][1] = visited[0][0][2] = visited[0][0][3] = 0
+    
+    dr, dc = [-1, 0, 1, 0], [0, -1, 0, 1]
+    while q:
+        cost, cr, cc, direction = heappop(q)
+        if (cr, cc) == (n - 1, n - 1):
+            answer = min(answer, cost) if answer else cost
+        
+        for i in range(4):
+            nr, nc = cr + dr[i], cc + dc[i]
+            if 0 <= nr < n and 0 <= nc < n and board[nr][nc] == 0:
+                new_cost = cost + 100 if direction == i or direction == -1 else cost + 600
+                if visited[nr][nc][i] >= new_cost:
+                    visited[nr][nc][i] = new_cost
+                    heappush(q, (new_cost, nr, nc, i))
+        
+    return answer
+```
+- visited를 네 개의 방향을 전부 고려하는 형태로 코드를 작성하는 것이 핵심!
 
 ---
 </div>
@@ -401,7 +432,41 @@ def solution(N, road, K):
 <div markdown='1'>
 
 ---
+```python
+from collections import defaultdict
 
+def solution(n, wires):
+    answer = float('inf')
+    
+    def DFS(node, visited, graph):
+        count = 1
+        visited[node] = True
+        for next_node in graph[node]:
+            if not visited[next_node]:
+                count += DFS(next_node, visited, graph)
+        return count
+    
+    tree = defaultdict(list)
+    
+    for s, e in wires:
+        tree[s].append(e)
+        tree[e].append(s)
+    
+    for s, e in wires:
+        tree[s].remove(e)
+        tree[e].remove(s)
+        
+        visited = [False] * (n + 1)
+        
+        count = DFS(s, visited, tree)
+        diff = abs(count - (n - count))
+        answer = min(diff, answer)
+        
+        tree[s].append(e)
+        tree[e].append(s)
+        
+    return answer
+```
 
 ---
 </div>
