@@ -203,6 +203,42 @@ def solution(n, info):
 <div markdown='1'>
 
 ---
+1. 정답 풀이
+```python
+from itertools import permutations
+
+def solution(n, weak, dist):
+    # 1. 주어진 weak 지점들을 선형으로 만들기 위해 weak 리스트에 마지막 지점 + n을 추가
+    length = len(weak)
+    for i in range(length):
+        weak.append(weak[i] + n)
+    
+    # 2. 투입할 수 있는 친구들의 수에 1을 더한 값을 초깃값으로 설정
+    answer = len(dist) + 1
+    
+    # 3. 모든 weak 지점을 시작점으로 설정하며 경우의 수 탐색
+    for i in range(length):
+        for friends in permutations(dist, len(dist)):
+            # 4. friends에 들어 있는 친구들을 순서대로 배치하며 투입된 친구 수 측정
+            cnt = 1
+            position = weak[i] + friends[cnt - 1]
+            # 5. 현재 투입된 친구가 다음 weak 지점까지 갈 수 있는지 검사
+            for j in range(i, i + length):
+                if position < weak[j]:
+                    cnt += 1
+                    # 6. 투입 가능한 친구의 수를 초과한 경우 탐색 중단
+                    if cnt > len(dist):
+                        break
+                    position = weak[j] + friends[cnt - 1]
+                
+                # 7.최대 친구 수를 구함
+                answer = min(answer, cnt)
+    
+    # 8. 모든 경우의 수를 탐색한 결과가 투입 가능한 친구 수를 초과하는 경우, -1 반환
+    return answer if answer <= len(dist) else -1
+```
+- 친구들을 어떻게 배치하는지에 따라 모든 취약 지점을 방문하는 데 필요한 최소 친구 수가 다를 수 있으므로, 순열
+- weak의 길이를 두 배로 늘려 시계 방향, 반시계 방향을 고려하지 않고 한 방향으로만 고려한다.
 
 ---
 </div>
