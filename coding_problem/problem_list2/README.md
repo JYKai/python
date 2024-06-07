@@ -60,4 +60,19 @@
 | V    | 28    | 1     | [해시맵 디자인](https://leetcode.com/problems/design-hashmap/description/) |
 | V    | 29    | 1     | [보석과 돌](https://leetcode.com/problems/jewels-and-stones/description/) |
 | X    | 30    | 2     | [중복 문자 없는 가장 긴 부분 문자열](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/) |
-|     | 31    | 2     | [상위 K 빈도 요소](https://leetcode.com/problems/top-k-frequent-elements/description/) |
+| V    | 31    | 2     | [상위 K 빈도 요소](https://leetcode.com/problems/top-k-frequent-elements/description/) |
+
+
+## Non-linear Structure
+
+### Graph
+| Done | No   | Level | Name                                                         |
+| ---- | :--- | ----- | ------------------------------------------------------------ |
+|     | 32    | 2     | [섬의 개수](https://leetcode.com/problems/number-of-islands/description/) |
+|     | 33    | 2     | [전화 번호 문자 조합](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/) |
+|     | 34    | 2     | [순열](https://leetcode.com/problems/permutations/description/) |
+|     | 35    | 2     | [조합](https://leetcode.com/problems/combinations/description/) |
+|     | 36    | 2     | [조합의 합](https://leetcode.com/problems/combination-sum/description/) |
+|     | 37    | 2     | [부분 집합](https://leetcode.com/problems/subsets/description/) |
+|     | 38    | 2     | [일정 재구성](https://leetcode.com/problems/reconstruct-itinerary/description/) |
+|     | 39    | 2     | [코스 스케쥴](https://leetcode.com/problems/course-schedule/description/) |
