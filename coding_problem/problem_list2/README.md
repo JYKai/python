@@ -57,7 +57,7 @@
 ### Hash table
 | Done | No   | Level | Name                                                         |
 | ---- | :--- | ----- | ------------------------------------------------------------ |
-|     | 28    | 1     | [해시맵 디자인](https://leetcode.com/problems/design-hashmap/description/) |
-|     | 29    | 1     | [보석과 돌](https://leetcode.com/problems/jewels-and-stones/description/) |
-|     | 30    | 2     | [중복 문자 없는 가장 긴 부분 문자열](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/) |
+| V    | 28    | 1     | [해시맵 디자인](https://leetcode.com/problems/design-hashmap/description/) |
+| V    | 29    | 1     | [보석과 돌](https://leetcode.com/problems/jewels-and-stones/description/) |
+| X    | 30    | 2     | [중복 문자 없는 가장 긴 부분 문자열](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/) |
 |     | 31    | 2     | [상위 K 빈도 요소](https://leetcode.com/problems/top-k-frequent-elements/description/) |
