@@ -68,8 +68,8 @@
 ### Graph
 | Done | No   | Level | Name                                                         |
 | ---- | :--- | ----- | ------------------------------------------------------------ |
-|     | 32    | 2     | [섬의 개수](https://leetcode.com/problems/number-of-islands/description/) |
-|     | 33    | 2     | [전화 번호 문자 조합](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/) |
+| V    | 32    | 2     | [섬의 개수](https://leetcode.com/problems/number-of-islands/description/) |
+| V    | 33    | 2     | [전화 번호 문자 조합](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/) |
 |     | 34    | 2     | [순열](https://leetcode.com/problems/permutations/description/) |
 |     | 35    | 2     | [조합](https://leetcode.com/problems/combinations/description/) |
 |     | 36    | 2     | [조합의 합](https://leetcode.com/problems/combination-sum/description/) |
