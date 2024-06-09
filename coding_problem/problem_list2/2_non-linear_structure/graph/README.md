@@ -59,6 +59,8 @@ def iterative_bfs(start_v):
 **제약 충족 문제(Constraint Satisfaction Problems, CSP)**  
 수많은 제약 조건을 충족하는 상태를 찾아내는 수학 문제
 
+
+## Problems
 <details>
 <summary>032. 섬의 개수</summary>
 <div markdown='1'>
