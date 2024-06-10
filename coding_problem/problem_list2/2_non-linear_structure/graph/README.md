@@ -142,3 +142,170 @@ class Solution:
 ---
 </div>
 </details>
+
+
+<details>
+<summary>034. 순열</summary>
+<div markdown='1'>
+
+---
+1. DFS를 활용한 순열 생성
+```python
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        results = []
+        prev_elements = []
+
+        def dfs(elements):
+            # 리프 노드일 때 결과 추가
+            if len(elements) == 0:
+                results.append(prev_elements[:])
+            
+            # 순열 생성 재귀 호출
+            for e in elements:
+                next_elements = elements[:]
+                next_elements.remove(e)
+
+                prev_elements.append(e)
+                dfs(next_elements)
+                prev_elements.pop()
+        
+        dfs(nums)
+        return results
+```
+- ```prev_elements[:]``` : 값을 복사하는 형태로 참조 관계를 갖지 않도록 처리한다.
+
+2. itertools 모듈 사용
+```python
+from itertools import permutations
+
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        return list(permutations(nums))
+```
+---
+</div>
+</details>
+
+
+<details>
+<summary>035. 조합</summary>
+<div markdown='1'>
+
+---
+1. DFS로 k개 조합 생성
+```python
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        results = []
+
+        def dfs(elements, start: int, k: int):
+            if k == 0:
+                results.append(elements[:])
+                return
+            
+            # 자신 이전의 모든 값을 고정하여 재귀 호출
+            for i in range(start, n + 1):
+                elements.append(i)
+                dfs(elements, i + 1, k - 1)
+                elements.pop()
+        
+        dfs([], 1, k)
+        return results
+```
+
+2. itertools 모듈 사용
+```python
+from itertools import combinations
+
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        return list(combinations(range(1, n + 1), k))
+```
+---
+</div>
+</details>
+
+
+<details>
+<summary>036. 조합의 합</summary>
+<div markdown='1'>
+
+---
+1. DFS로 중복 조합 그래프 탐색
+```python
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        result = []
+
+        def dfs(csum, index, path):
+            # 종료 조건
+            if csum < 0:
+                return
+            
+            if csum == 0:
+                result.append(path)
+                return
+            
+            # 자신 부터 하위 원소 까지의 나열 재귀 호출
+            for i in range(index, len(candidates)):
+                dfs(csum - candidates[i], i, path + [candidates[i]])
+            
+        dfs(target, 0, [])
+        return result
+```
+
+---
+</div>
+</details>
+
+
+<details>
+<summary>037. 부분 집합</summary>
+<div markdown='1'>
+
+---
+0. 내 풀이
+```python
+# 내 풀이
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        result = []
+        
+        def dfs(subset):
+            
+            result.append(subset)
+
+            for num in nums:
+                if not subset or subset[-1] < num:
+                    dfs(subset + [num])
+
+        dfs([])
+        return result
+```
+- ```subset```이 비어있거나 ```subset```의 마지막 원소가 다음으로 입력 될 원소보다 작아야한다.
+
+
+1. 트리의 모든 DFS 결과
+```python
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        result = []
+
+        def dfs(index, path):
+            # 매번 결과 추가
+            result.append(path)
+
+            # 경로를 만들면서 DFS
+            for i in range(index, len(nums)):
+                dfs(i + 1, path + [nums[i]])
+        
+        dfs(0, [])
+        return result
+```
+- 모든 탐색의 경로가 결국 정답이 되므로, 탐색할 때마다 매번 결과를 추가해주면 된다.
+- ```dfs(i + 1, path + [nums[i]])``` 부분과 나의 코드 중 ```subset[-1] < num:``` 부분을 변경할 수 있다.
+
+---
+</div>
+</details>
