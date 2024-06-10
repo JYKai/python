@@ -75,3 +75,98 @@ float(Decimal('0.1') * Decimal('0.1')) == 0.01 # True
 ---
 </div>
 </details>
+
+
+<details>
+<summary>020. 분수를 정확하게 계산하려면?</summary>
+<div markdown='1'>
+
+---
+**fractions**  
+유리수를 계산할 때 사용하는 모듈
+
+일반적인 상황
+```python
+1/5 + 2/5
+>>> 0.60000000000001
+```
+
+Fraction 활용
+```python
+from fractions import Fraction
+
+a = Fraction(1, 5)
+print(a) # 1/5
+
+a = Fraction('1/5')
+print(a) # 1/5
+
+print(a.numerator) # 분자의 값 = 1
+print(a.denominator) # 분모의 값 = 5
+
+result = Fraction(1, 5) + Fraction(2, 5)
+print(result) # 3/5
+print(float(result)) # 0.6
+```
+- ```Fraction(분자, 분모)``` 또는 ```Fraction('분자/분모')``` 
+- 분자 값 확인 = ```numerator```
+- 분모 값 확인 = ```denominator```
+
+---
+</div>
+</details>
+
+
+<details>
+<summary>021. 로또 번호를 뽑으려면?</summary>
+<div markdown='1'>
+
+---
+**random**  
+난수를 생성할 때 사용하는 모듈
+
+> Q. 1부터 45 사이의 서로 다른 숫자 6개로 이루어진 로또 번호를 추첨하는 프로그램을 만들려면?
+```python
+import random
+
+result = []
+while len(result) <  6:
+    num = random.randint(1, 45)
+    if num not in result:
+        result.append(num)
+
+print(result) # [38, 12, 31, 29, 20, 15]
+```
+- ```randint(start, end)``` 
+    - start부터 end 사이의 숫자 한 개를 무작위로 생성하는 함수
+
+- 무작위로 섞으려면? ```random.shuffle()```
+- 무작위로 선택하려면? ```random.choice()```
+
+---
+</div>
+</details>
+
+
+<details>
+<summary>022. 시험 결과의 평균값과 중앙값을 알려면?</summary>
+<div markdown='1'>
+
+---
+**statistics**  
+평균값과 중앙값을 구할 때 사용하는 모듈
+
+활용
+```python
+import statistics
+
+marks = [78, 93, 99, 95, 51, 71, 52, 43, 81, 78]
+print(statistics.mean(marks)) # 74.1
+print(statistics.median(marks)) # 78.0
+```
+- 중앙값이 짝수 일 경우 두 값의 평균으로 구한다.
+
+
+---
+</div>
+</details>
