@@ -309,3 +309,94 @@ class Solution:
 ---
 </div>
 </details>
+
+
+<details>
+<summary>038. 일정 재구성</summary>
+<div markdown='1'>
+
+---
+1. DFS로 일정 그래프 구성
+```python
+from collections import defaultdict
+
+class Solution:
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        graph = defaultdict(list)
+        # 그래프 순서대로 구성
+        for a, b in sorted(tickets):
+            graph[a].append(b)
+        
+        route = []
+        def DFS(start):
+            # 첫 번째 값을 읽어 어휘 순 방문
+            while graph[start]:
+                DFS(graph[start].pop(0))
+            route.append(start)
+
+        DFS("JFK")
+
+        # 다시 뒤집어서 어휘순 결과로
+        return route[::-1]
+```
+
+2. 스택 연산으로 큐 연산 최소화
+```python
+from collections import defaultdict
+
+class Solution:
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        graph = defaultdict(list)
+        # 그래프 순서대로 구성
+        for a, b in sorted(tickets, reverse=True):
+            graph[a].append(b)
+        
+        route = []
+        def DFS(start):
+            # 첫 번째 값을 읽어 어휘 순 방문
+            while graph[start]:
+                DFS(graph[start].pop())
+            route.append(start)
+
+        DFS("JFK")
+
+        # 다시 뒤집어서 어휘순 결과로
+        return route[::-1]
+```
+
+3. 일정 그래프 반복
+```python
+from collections import defaultdict
+
+class Solution:
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        graph = defaultdict(list)
+        # 그래프 순서대로 구성
+        for a, b in sorted(tickets):
+            graph[a].append(b)
+        
+        route, stack = [], ["JFK"]
+        while stack:
+            # 반복으로 스택을 구성하되 막히는 부분에서 풀어내는 처리
+            while graph[stack[-1]]:
+                stack.append(graph[stack[-1]].pop(0))
+            route.append(stack.pop())
+        
+        # 다시 뒤집어서 어휘순 결과로
+        return route[::-1]
+```
+
+---
+</div>
+</details>
+
+
+<details>
+<summary>039. 코드 스케쥴</summary>
+<div markdown='1'>
+
+---
+
+---
+</div>
+</details>

@@ -74,5 +74,5 @@
 | V    | 35    | 2     | [조합](https://leetcode.com/problems/combinations/description/) |
 | V    | 36    | 2     | [조합의 합](https://leetcode.com/problems/combination-sum/description/) |
 | V    | 37    | 2     | [부분 집합](https://leetcode.com/problems/subsets/description/) |
-|     | 38    | 2     | [일정 재구성](https://leetcode.com/problems/reconstruct-itinerary/description/) |
+| X    | 38    | 2     | [일정 재구성](https://leetcode.com/problems/reconstruct-itinerary/description/) |
 |     | 39    | 2     | [코스 스케쥴](https://leetcode.com/problems/course-schedule/description/) |
