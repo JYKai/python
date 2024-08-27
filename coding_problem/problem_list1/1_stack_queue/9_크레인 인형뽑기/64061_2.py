@@ -1,19 +1,15 @@
 from typing import List
 
 def grep(board: List[List[int]], location: int) -> int:
-    result = 0
     rows = len(board)
     
     for r in range(rows):
         doll = board[r][location]
-        if doll == 0:
-            continue
-        else:
-            result = doll
+        if doll != 0:
             board[r][location] = 0
-            break
+            return doll
     
-    return board, result
+    return 0
         
 
 def solution(board, moves):
@@ -21,13 +17,13 @@ def solution(board, moves):
     stack = []
     
     for move in moves:
-        board, doll = grep(board, move - 1)
+        doll = grep(board, move - 1)
         if not doll:
             continue
-        if not stack or stack[-1] != doll:
-            stack.append(doll)
-        elif stack[-1] == doll:
+        if stack and stack[-1] == doll:
             stack.pop()
             answer += 2
+        else:
+            stack.append(doll)
             
     return answer
