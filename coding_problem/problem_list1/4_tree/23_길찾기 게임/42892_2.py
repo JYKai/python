@@ -24,18 +24,17 @@ def postorder(tree, post):
     return post
 
 def insert_node(root, info):
-    current = root
-    while True:
-        if current.info[1] > info[1]:
-            if current.left is None:
-                current.left = Node(info)
-                break
-            current = current.left
+    if root.info[1] > info[1]:
+        if root.left is None:
+            root.left = Node(info)
         else:
-            if current.right is None:
-                current.right = Node(info)
-                break
-            current = current.right
+            insert_node(root.left, info)
+    else:
+        if root.right is None:
+            root.right = Node(info)
+        else:
+            insert_node(root.right, info)
+    
             
 def solution(nodeinfo):
     nodeinfo = [[idx + 1] + node for idx, node in enumerate(nodeinfo)]
