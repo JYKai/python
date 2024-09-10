@@ -1,3 +1,4 @@
+# 시간 초과
 def solution(phone_book):
     book_dict = {}
     for phone_number in phone_book:

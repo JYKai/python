@@ -4,4 +4,4 @@
 | Done | Type   | Level | Name                                                         |
 | ---- | :--- | ----- | ------------------------------------------------------------ |
 | V    | Greedy    | Blonze 2     | [바이러스 검사](https://www.codetree.ai/training-field/frequent-problems/problems/virus-detector/submissions?page=1&pageSize=20&order=tier) |
-|     |     |      |  |
+| X    | Backtracking  | Silver 3    | [외주 수익 최대화하기](https://www.codetree.ai/training-field/frequent-problems/problems/max-of-outsourcing-profit/description?page=12&pageSize=5) |
