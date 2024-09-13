@@ -80,7 +80,7 @@
 |V| 38   | 1     | [문자열 내 마음대로 정렬하기](https://school.programmers.co.kr/learn/courses/30/lessons/12915) |
 |V| 39   | 1     | [정수 내림차수으로 배치하기](https://school.programmers.co.kr/learn/courses/30/lessons/12933) |
 |V| 40   | 1     | [K번째 수](https://school.programmers.co.kr/learn/courses/30/lessons/42748) |
-|X| 41   | 3     | [가장 큰 수](https://school.programmers.co.kr/learn/courses/30/lessons/42746) |
+|V| 41   | 3     | [가장 큰 수](https://school.programmers.co.kr/learn/courses/30/lessons/42746) |
 |V| 42   | 2     | [튜플](https://school.programmers.co.kr/learn/courses/30/lessons/64065) |
 |X| 43   | 4     | [지형 이동](https://school.programmers.co.kr/learn/courses/30/lessons/62050) |
 
