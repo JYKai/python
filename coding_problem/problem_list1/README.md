@@ -113,4 +113,4 @@
 |V| 56   | 1     | [예산](https://school.programmers.co.kr/learn/courses/30/lessons/12982) |
 |X| 57   | 1     | [구명보트](https://school.programmers.co.kr/learn/courses/30/lessons/42885) |
 |V| 58   | 2     | [귤 고르기](https://school.programmers.co.kr/learn/courses/30/lessons/138476) |
-|X| 59   | 2     | [기지국 설치](https://school.programmers.co.kr/learn/courses/30/lessons/12979) |
+|V| 59   | 2     | [기지국 설치](https://school.programmers.co.kr/learn/courses/30/lessons/12979) |
