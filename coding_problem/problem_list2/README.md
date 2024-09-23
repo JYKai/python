@@ -21,7 +21,7 @@
 | X    | 9    | 2     | [세 수의 합](https://leetcode.com/problems/3sum/description/) |
 | V    | 10    | 1     | [배열 파티션1](https://leetcode.com/problems/array-partition/description/) |
 | X    | 11    | 2     | [자신을 제외한 배열의 곱](https://leetcode.com/problems/product-of-array-except-self/description/) |
-| X    | 12    | 1     | [주식을 사고팔기 가장 좋은 시점](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/) |
+| V    | 12    | 1     | [주식을 사고팔기 가장 좋은 시점](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/) |
 
 
 ### Linked List
